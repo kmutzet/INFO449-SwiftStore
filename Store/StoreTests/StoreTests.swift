@@ -66,4 +66,15 @@ TOTAL: $7.97
 """
         XCTAssertEqual(expectedReceipt, receipt.output())
     }
+    
+    func testItem() {
+        let item = Item(name: "Controller", priceEach: 4000)
+        let testPrice = item.priceEach
+            XCTAssertEqual(4000, testPrice)
+            register.scan(item)
+            XCTAssertEqual(4000, register.subtotal())
+    }
+
 }
+
+
